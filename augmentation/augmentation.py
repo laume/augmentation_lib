@@ -574,10 +574,10 @@ def overlay2_images(image1: Union[str, np.ndarray],
     """
     if type(image1) is not np.ndarray:
         image1 = Image.open(image1)
-        image = np.asarray(img)
+        image1 = np.asarray(img)
     if type(image2) is not np.ndarray:
         image2 = Image.open(image2)
-        image = np.asarray(img)
+        image2 = np.asarray(img)
 
     h, w, _ = image1.shape
 
