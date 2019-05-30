@@ -8,7 +8,6 @@ from utils import resize_image
 from constants import kernel_blur, kernel_sharp
 
 # Crops
-
 def center_crop_px(image: Union[str, np.ndarray], size: tuple) -> np.ndarray:
     """
     Takes an image, width and height in pixels and returns
@@ -231,7 +230,6 @@ def random_crop_percents(image: Union[str, np.ndarray], size: tuple) -> np.ndarr
 
 
 # Flips
-
 def flip_horizontal(image: Union[str, np.ndarray]) -> np.ndarray:
     """
     Takes an image and flips it horizontally.
@@ -428,6 +426,7 @@ def shuffle(image: Union[str, np.ndarray], channels: Optional[str] = None) -> np
     if type(image) is not np.ndarray:
         img = Image.open(image)
         image = np.asarray(img)
+    image = image / 255
     shuffled = np.zeros(image.shape)
     order = {'R': 0, 'G': 1, 'B': 2}
     if channels:
@@ -442,6 +441,9 @@ def shuffle(image: Union[str, np.ndarray], channels: Optional[str] = None) -> np
 
     for i, v in enumerate(channels):
         shuffled[:, :, i] = image[:, :, order[v.upper()]]
+
+    # if shuffled.max() > 0 or shuffled.min() < 0:
+    #     shuffled = np.clip(shuffled, 0, 1)
     return shuffled
 
 
@@ -592,7 +594,9 @@ def overlay2_images(image1: Union[str, np.ndarray],
     # result = (image1 + image2) / 2
     return result
 
-
+# np resize with interpolation
+# def np_resize(image):
+#     pass
 
 
 if __name__ == '__main__':
