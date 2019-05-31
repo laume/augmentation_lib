@@ -595,8 +595,31 @@ def overlay2_images(image1: Union[str, np.ndarray],
     return result
 
 # np resize with interpolation
-# def np_resize(image):
-#     pass
+def resize_np(image: str, new_size: tuple) -> np.ndarray:
+    """
+        Resize image using numpy and Nearest Neighbor Interpolation
+
+        Keyword Arguments:
+            image {str} -- the path to the image,
+            new_size {tuple} -- size you want to get (h, w)
+
+        Returns:
+            numpy.ndarray -- resized according specified new_size
+        """
+    img = Image.open(image)
+    image = np.asarray(img)
+    x, y, _ = image.shape
+    x1, y1 = new_size
+    resized = np.zeros((x1, y1, 3), dtype=np.uint8)
+    cx = x1 / x
+    cy = y1 / y
+
+    for i in range(x1):
+        for j in range(y1):
+            v = int(np.round(i / cx))
+            w = int(np.round(j / cy))
+            resized[i][j] = image[v][w]
+    return resized
 
 
 if __name__ == '__main__':
