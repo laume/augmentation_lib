@@ -3,7 +3,6 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 
-# resize image
 def resize_image(image: str, size: tuple) -> np.ndarray:
     """
     Takes an image and resize it to your specified size in px.
@@ -22,7 +21,6 @@ def resize_image(image: str, size: tuple) -> np.ndarray:
     resized = image.resize(size, Image.ANTIALIAS)
     return np.asarray(resized)
 
-# Plot images
 
 def namestr(obj: str, namespace) -> str:
     """

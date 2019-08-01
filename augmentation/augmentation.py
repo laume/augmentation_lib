@@ -7,7 +7,7 @@ import random
 from utils import resize_image
 from constants import kernel_blur, kernel_sharp
 
-# Crops
+
 def center_crop_px(image: Union[str, np.ndarray], size: tuple) -> np.ndarray:
     """
     Takes an image, width and height in pixels and returns
@@ -229,7 +229,6 @@ def random_crop_percents(image: Union[str, np.ndarray], size: tuple) -> np.ndarr
         return img_arr
 
 
-# Flips
 def flip_horizontal(image: Union[str, np.ndarray]) -> np.ndarray:
     """
     Takes an image and flips it horizontally.
@@ -266,7 +265,6 @@ def flip_vertical(image: Union[str, np.ndarray]) -> np.ndarray:
     return np.flip(img_arr, axis=1)
 
 
-# Pad image
 def zero_pad(image: Union[str, np.ndarray], pad: int) -> np.ndarray:
     """
     Takes an image and pads it with zeros by specified number of pixels.
@@ -285,7 +283,6 @@ def zero_pad(image: Union[str, np.ndarray], pad: int) -> np.ndarray:
     return padded
 
 
-# Convolutions
 def conv_one_step(slc: np.array, kernel: np.array) -> np.array:
     """
     Performs convolution for specified slice
@@ -363,7 +360,6 @@ def full_convolution(image: Union[str, np.ndarray], kernel: np.array) -> np.ndar
     return changed
 
 
-# Dropout
 def dropout_random(image: Union[str, np.ndarray]) -> np.ndarray:
     """
     Performs random dropout of image pixels
@@ -411,7 +407,6 @@ def dropout(image: Union[str, np.ndarray], intensity: float) -> np.ndarray:
     return img
 
 
-# Suffle
 def shuffle(image: Union[str, np.ndarray], channels: Optional[str] = None) -> np.ndarray:
     """
     Performs shuffle of image layers by specified order
@@ -447,7 +442,6 @@ def shuffle(image: Union[str, np.ndarray], channels: Optional[str] = None) -> np
     return shuffled
 
 
-# Color jitter
 def jitter(image: Union[str, np.ndarray], probability: float,
            channel: Optional[str] = None) -> np.ndarray:
     """
@@ -495,7 +489,6 @@ def jitter(image: Union[str, np.ndarray], probability: float,
     return shuffled
 
 
-# Image opacity
 def opacity(image: Union[str, np.ndarray], transparency: float):
     """
     Makes an image transparent
@@ -594,7 +587,7 @@ def overlay2_images(image1: Union[str, np.ndarray],
     # result = (image1 + image2) / 2
     return result
 
-# np resize with interpolation
+
 def resize_np(image: str, new_size: tuple) -> np.ndarray:
     """
         Resize image using numpy and Nearest Neighbor Interpolation
@@ -623,5 +616,5 @@ def resize_np(image: str, new_size: tuple) -> np.ndarray:
 
 
 if __name__ == '__main__':
-    img = 'path_to_image'
+    img = 'pics/bird.jpg'
     flip_vertical(img)
