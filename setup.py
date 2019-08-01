@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="augmentation_lib",
-    version="0.0.1",
+    version="0.0.2",
     author="Laura Lu",
     author_email="new4spam@gmail.com",
     description="Image augmentation library",
