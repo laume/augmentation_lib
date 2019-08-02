@@ -520,7 +520,7 @@ def opacity(image: Union[str, np.ndarray], transparency: float):
 
 def opacity_object(image: Union[str, np.ndarray], object_intensity: tuple):
     """
-    Makes an image transparent
+    Makes an image background transparent
 
     Keyword Arguments:
         image {Union[str, np.ndarray]} -- the path to the image or np.array

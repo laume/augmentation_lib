@@ -1,4 +1,4 @@
-VERSION = (0, 0, 3)
+VERSION = (0, 0, 4)
 __version__ = '.'.join([str(x) for x in VERSION])
 
 from augmentation_lib.augmentation import center_crop_px
