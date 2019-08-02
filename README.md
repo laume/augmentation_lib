@@ -1,7 +1,7 @@
 # Image augmentation library
 
 This image augmentation library can be used to crop, flip, blur, sharpen, mix channels, overlay images.
-The main idea is to use only numpy library to perform this tasks.
+The main idea is to use only numpy library to perform these tasks.
 Augmented images can be used for Machine Learning projects
 
 # Getting it
