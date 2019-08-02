@@ -4,8 +4,8 @@ import doctest
 import numbers
 from typing import Optional, Union
 import random
-from utils import resize_image
-from constants import kernel_blur, kernel_sharp
+from .utils import resize_image
+from .constants import kernel_blur, kernel_sharp
 
 
 def center_crop_px(image: Union[str, np.ndarray], size: tuple) -> np.ndarray:
