@@ -4,8 +4,6 @@
 .ipynb_checkpoints
 __pycache__
 *.icloud
-.egg-info 
-dist/*
 
 # developer environments
 .idea
